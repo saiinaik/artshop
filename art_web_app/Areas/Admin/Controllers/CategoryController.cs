@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using art_web_app.Data;
+using art_web_app.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,8 +21,25 @@ namespace art_web_app.Areas.Admin.Controllers
             return View(await _context.Categories.ToListAsync());
         }
 
-        public IActionResult Create(){
+        // * Get Create
+        public IActionResult Create()
+        {
             return View();
+        }
+
+        // * Post Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Categories.Add(category);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
         }
     }
 }
