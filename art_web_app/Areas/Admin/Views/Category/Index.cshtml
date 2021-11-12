@@ -1,47 +1,48 @@
 ﻿@model IEnumerable<Category>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="border backgroundWhite">
-    <div class="row">
-        <div class="col-6">
-            <h4 class="s-txt-primary">Categories</h4>
-        </div>
-        <div class="col-6 text-right">
-            <a class="btn btn-outline-success" asp-controller="Category" asp-action="Create"><i
-                    class="fas fa-plus"></i>&nbsp;Add</a>
-        </div>
-    </div>
-    <hr>
-    <div>
-        @if (Model.Count() > 0)
-        {
-            <table class="table border">
-                <tr>
-                    <th>@Html.DisplayNameFor(m => m.Name)</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                @foreach (var category in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(m => category.Name)
-                        </td>
-                        <td>
-                            Edit | Delete | View
-                        </td>
-                    </tr>
-                }
-            </table>
-        }
-        else
-        {
-            <p style="justify-content: center; align-items: center;">No Categories added</p>
-        }
+	<div class="row">
+		<div class="col-6">
+			<h4 class="s-txt-primary">Categories</h4>
+		</div>
+		<div class="col-6 text-right">
+			<a class="btn btn-outline-success" asp-controller="Category" asp-action="Create">
+				<i class="fas fa-plus"></i>&nbsp;Add
+			</a>
+		</div>
+	</div>
+	<hr>
+	<div>
+		@if (Model.Count() > 0)
+		{
+			<table class="table border">
+				<tr>
+					<th>@Html.DisplayNameFor(m => m.Name)</th>
+					<th></th>
+					
+				</tr>
+				@foreach (var category in Model)
+				{
+					<tr>
+						<td>
+							@Html.DisplayFor(m => category.Name)
+						</td>
+						<td class="text-right">
+							<partial name="_TableButtonPartial" model="category.Id">
+						</td>
+					</tr>
+				}
+			</table>
+		}
+		else
+		{
+			<p style="justify-content: center; align-items: center;">No Categories added</p>
+		}
 
-    </div>
+	</div>
 </div>
