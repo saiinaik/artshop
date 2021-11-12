@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-art_web_app-C9338C55-9FFB-4604-8CF0-70C8404E5D9D</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12" />
+  </ItemGroup>
+
+</Project>
