@@ -8,10 +8,11 @@
 <div class="border backgroundWhite">
     <div class="row">
         <div class="col-6">
-            <h4 class="s-txt-primary">Category List</h4>
+            <h4 class="s-txt-primary">Categories</h4>
         </div>
         <div class="col-6 text-right">
-            <a class="btn-main" asp-controller="Category" asp-action="Create"><i class="fas fa-plus"></i>&nbsp;Add</a>
+            <a class="btn btn-outline-success" asp-controller="Category" asp-action="Create"><i
+                    class="fas fa-plus"></i>&nbsp;Add</a>
         </div>
     </div>
     <hr>
@@ -36,7 +37,9 @@
                     </tr>
                 }
             </table>
-        } else {
+        }
+        else
+        {
             <p style="justify-content: center; align-items: center;">No Categories added</p>
         }
 

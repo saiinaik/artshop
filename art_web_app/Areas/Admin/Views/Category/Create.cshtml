@@ -1,8 +1,48 @@
-﻿
+﻿@model Category
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div class="border backgroundWhite">
+    <header>
+        <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+                <h5 class="s-txt-primary"><b>Create Category</b></h5>
+            </div>
+        </div>
+    </header>
+    <hr>
 
+    <div class="row container d-flex justify-content-center">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <form action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="Name" class="col-form-label"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group row">
+
+                    <div class="col-8 offset-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="submit" class="btn btn-success form-control" value="CREATE">
+                            </div>
+                            <div class="col-6">
+                                <button asp-action="Index" class="btn btn-outline-secondary form-control">Back</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
