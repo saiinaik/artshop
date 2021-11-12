@@ -140,7 +140,37 @@ body {
 * Buttons
 ---------------------------------------*/
 .btn-main {
-    color: #fff;
-    background-color: #25D366;
-    border-color: #25D366;
+  background: #25D366;
+  border: 1px solid #25D366;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn-main:hover,
+.btn-main:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #25D366;
+}
+
+.btn-main:active {
+  opacity: .5;
 }
