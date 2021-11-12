@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace art_web_app.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
