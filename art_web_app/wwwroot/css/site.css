@@ -108,5 +108,39 @@ body {
 }
 
 .s-txt-primary {
-    color: #128C7E;
+    color: #25D366;
+}
+
+/*
+* Category
+-----------------------*/
+.backgroundWhite {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.backgroundWhiteBorder {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+}
+
+.backgroundWhiteBorder10Padding {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/*
+* Buttons
+---------------------------------------*/
+.btn-main {
+    color: #fff;
+    background-color: #25D366;
+    border-color: #25D366;
 }
