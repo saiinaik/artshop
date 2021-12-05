@@ -41,5 +41,58 @@ namespace art_web_app.Areas.Admin.Controllers
             }
             return View(category);
         }
+
+        // * Get Edit
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+
+            return View(category);
+        }
+
+        // * POST Update
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Edit(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(category);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(category);
+        }
+
+        // * Get Delete
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+
+            return View(category);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int? id)
+        {
+            var categoryToDelete = await _context.Categories.FindAsync(id);
+            if (categoryToDelete == null) return View();
+
+            _context.Remove(categoryToDelete);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

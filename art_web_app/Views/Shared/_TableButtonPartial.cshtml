@@ -3,8 +3,8 @@
 *@
 @model int
 
-<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-	<a asp-action="Detail" asp-route-Id="@Model" style="cursor: pointer;" class="btn btn-info"><i class="fas fa-eye"></i></a>
-	<a asp-action="Edit" asp-route-Id="@Model" style="cursor: pointer;" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-	<a asp-action="Delete" asp-route-Id="@Model" style="cursor: pointer;" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+<div class="btn-group btn-group-sm p-1" role="group" aria-label="Basic example">
+	@*<a asp-action="Detail" asp-route-Id="@Model" style="cursor: pointer; font-weight:bold" class="mr-2 s-txt-primary">View</a> &nbsp;|&nbsp;*@
+	<a asp-action="Edit" asp-route-Id="@Model" style="cursor: pointer; font-weight:bold" class="ml-2 mr-2 s-txt-primary">Edit</a>&nbsp;|&nbsp;
+	<a asp-action="Delete" asp-route-Id="@Model" style="cursor: pointer; font-weight:bold" class="ml-2 s-txt-primary">Delete</a> 
 </div>
